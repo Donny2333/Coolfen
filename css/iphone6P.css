@@ -1,0 +1,570 @@
+/*iphone6Plus*/
+@media screen and (min-width: 414px){
+	/*侧边栏*/
+  .c_menu .m_info img {
+    margin-top: 56px;
+  }
+  .c_menu .m_info div.please{
+    margin-top: 30px;
+  }
+  .c_menu .c_list .list {
+    margin-top: 45px;
+    margin-left: 20px;
+  }
+  .c_menu .c_list .item {
+    line-height:55px;
+    margin-left: -22px;
+  }
+  .c_menu .c_list .item-complex.item-icon-left .item-content{
+  	    padding-left: 60px;
+  }
+  .c_menu .c_list ion-item s{
+    zoom:0.56;
+  }
+  .c_menu .c_list ion-item span {
+    font-size: 15px;
+  }
+  .c_menu .m_info p {
+	  font-size: 14px;
+  }
+  .c_menu .m_info span {
+	  font-size: 14px;
+  }
+   /*登录*/
+  .login form  label input, .login form .getAuthBtn {
+    font-size: 14px;
+  }
+  .login form .login-button{
+  	font-size: 16px;
+  }
+  .login form  label input {
+    font-size: 16px;
+  }
+  /*个人资料*/
+ .person .toparea-container .mobile-number {
+  	font-size: 16px;
+  }
+  .person .p_title {
+    font-size: 12px;
+}
+  .person label input{
+	font-size: 15px;
+  }
+  .person .item .input-label {
+  padding: 21px 20px 21px 35px;
+}
+/*最新入驻*/
+.hotspot .item_desc .scroll-view .scroll {
+    height: 340px;
+}
+.hotspot .coolfen-card .title .t_name{
+	font-size: 14px;
+}
+   .hotspot .item_desc .title{
+   	padding-top: 35px;
+   }
+.hotspot ul.information li i.sanjiao_right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-left: 7px solid #333;
+    border-bottom: 7px solid transparent;
+    margin-right: 15px;
+}
+.hotspot ul.information {
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.bar-footer .dot {
+    font-size: 16px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 65px;
+}
+
+.bar-footer .d_addCard{
+	font-size: 15px;
+}
+.bar-footer .dot ul li {
+    width: 10px;
+    height: 10px;
+}
+/*设置*/
+.setting ul {
+    margin-top: 20px;
+}
+.setting ul li {
+    height: 50px;
+}
+.setting ul li a s {
+    left: 46px;
+    top: 27px;
+    zoom: 0.53;
+}
+.setting span {
+  font-size: 15px;
+}
+.setting ul li a i.icon {
+    font-size: 22px;
+}
+.content-bk button  {
+	font-size: 16px;
+}
+.logout-actionsheet .action-sheet-title {
+    font-size: 13px;
+}
+/*关于酷分*/
+/*.about div.coolfenAbout01{
+height:398px;
+}*/
+/*.about div.coolfenAbout02{
+	height:420px;
+}*/
+/*.about div.coolfenAbout03{
+	height:312px;
+}*/
+/*.about div.coolfenAbout04{
+	height:145px;
+}*/
+/*.about div.coolfenAbout04 ul li a{
+	display: block;
+	width: 37px;
+	height: 30px;
+	margin-top: 30%;
+}*/
+/*.about div.coolfenAbout04 ul li a.officialAccount{
+	width: 34px;
+	margin-left: 60%;
+}*/
+/*.about div.coolfenAbout04 ul li a.officialAccount.activated{
+	width: 45px;
+	height: 45px;
+	margin-left: 55%;
+}*/
+/*.about div.coolfenAbout04 ul li a.sinaWebo{
+	margin-left: 45%;
+}*/
+/*.about div.coolfenAbout04 ul li a.sinaWebo.activated{
+	width: 45px;
+	height: 45px;
+	margin-left: 40%;
+}*/
+/*.about div.coolfenAbout04 ul li a.webSite{
+	width: 31px;
+	margin-left: 30%;
+}*/
+/*.about div.coolfenAbout04 ul li a.webSite.activated{
+	width: 45px;
+	height: 45px;
+	margin-left: 25%;
+}*/
+/*home页*/
+.bar .title a.serchbutn>div.serchbutn_style{
+	width: 42%;
+}
+.serchbutn_style>span{
+	top: -4px;
+	font-size: 14px;
+	font-weight: normal;
+}
+.serchbutn_style>i.searchImg{
+	zoom: 0.53;
+	top: 15px;
+}
+.home_user{
+  width: 22px;
+  height: 25px;
+  margin-top: 4px;
+  margin-left: 2px;
+}
+.home_message{
+  width: 29px;
+  height: 25px;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+.home .discount h2 {
+    font-size: 19px;
+     margin:10px 0px 10px 0px;
+}
+.home .ad img {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+}
+.home .ad span {
+    font-size: 14px;
+}
+.home .cardCtrl .pay span {
+    font-size: 19px;
+}
+.home .cardCtrl .pay {
+    margin-top: 40px;
+}
+.home .cardCtrl .pay {
+    display: block;
+    width: 170px;
+    height: 45px;
+}
+.home .cardCtrl .pay i.GoPay {
+    width: 46px;
+    height: 20px;
+    }
+/*卡片尺寸*/
+.swiper-slide{
+  height: 110px;
+}
+/*水球样式*/
+/*.polo {
+  margin: 15px auto;
+}*/
+.polo-point {
+  font-size: 53px;
+}
+.polo-wrapper s.polo_up{
+	width: 60px;
+	height: 55px;
+	top: 7%;
+}
+.polo-wrapper s.polo_down{
+	width: 42px;
+	height: 34px;
+	bottom: 9%;
+}
+.polo_border {
+    width: 233px;
+    height: 233px;
+    margin: 25px auto;
+}
+.polo-point:after{
+  font-size: 39px;
+}
+.polo-text {
+  font-size: 17px;
+}
+.scroll-view {
+    margin-top: 5px;
+}
+.polo-text >div {
+    font-size: 53px;
+	margin-top: -200px;
+}
+.polo-text >div:after {
+    font-size: 39px;
+}
+/*隐藏菜单*/
+.favorite-switch {
+  height: 50px;
+  width: 50px;
+  bottom: 20px;
+}
+.favorite-item {
+  height: 50px;
+  width: 50px;
+  bottom: 20px;
+}
+@-webkit-keyframes trading-record-in-keyframes {
+  from {
+    right: 22px;
+  }
+  to {
+   	right: 95px;
+  }
+}
+
+@keyframes trading-record-in-keyframes {
+  from {
+    right: 22px;
+  }
+  to {
+    right: 95px;
+  }
+}
+
+@-webkit-keyframes trading-record-out-keyframes {
+  from {
+    right: 95px;
+  }
+  to {
+   	right: 22px;
+  }
+}
+
+@keyframes trading-record-out-keyframes {
+  from {
+    right: 95px;
+  }
+  to {
+   	right: 22px;
+  }
+}
+
+@-webkit-keyframes phone-in-keyframes {
+  from {
+   right:95px;
+  }
+  to {
+    right:180px;
+  }
+}
+
+@keyframes phone-in-keyframes {
+  from {
+   right:95px;
+  }
+  to {
+   right:180px;
+  }
+}
+
+@-webkit-keyframes phone-out-keyframes {
+  from {
+    right:95px;
+  }
+  to {
+    right:22px;
+  }
+}
+
+@keyframes phone-out-keyframes {
+  from {
+    right:180px;
+  }
+  to {
+    right:22px;
+  }
+}
+
+@-webkit-keyframes location-in-keyframes {
+  from {
+   right:180px;
+  }
+  to {
+    right:265px;
+  }
+}
+
+@keyframes location-in-keyframes {
+  from {
+   right:180px;
+  }
+  to {
+   right:265px;
+  }
+}
+
+@-webkit-keyframes location-out-keyframes {
+  from {
+    right:180px;
+  }
+  to {
+    right:22px;
+  }
+}
+
+@keyframes location-out-keyframes {
+  from {
+   right:265px;
+  }
+  to {
+    right:22px;
+  }
+}
+
+/*消息提醒*/
+ .m_detail .noMessage{
+    margin-top: 60px;
+    font-size: 16px;
+    }
+.dianjiamessage{
+	font-size: 15px;
+}
+
+ /*最强推荐-*/
+.home .list-find > .item > .row > .col-66 {
+ 	width: 58%;
+}
+.home .list-find > .item > .row > .col-66 p.description {
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+.home .list-find > .item > .row > .col-66 h2.chinese-name{
+  font-size: 15px;
+
+}
+.home .list-find > .item > .row > .col-66 p.distance i {
+  font-size: 15px
+}
+.home .list-find > .item > .row > .col-66 p.distance{
+  font-size: 12px;
+}
+.home .list-find .bottom .fontsizeMans{
+	font-size: 13px;
+	width: 44%;
+}
+.home .list-find .card-bk {
+  width: 142px;
+  height: 90px;
+}
+
+.home .list-find > .item {
+  height: 115px;
+}
+.pushpin {
+    right: -2px;
+    top: -7px;
+}
+/*交易记录*/
+.trade {
+  top: 35%;
+}
+.text-center {
+   font-size: 15px;
+}
+/*.trade .b_list {
+  font-size: 14px;
+  line-height: 36px;
+}*/
+.trade .has-subheader {
+ height: 370px;
+}
+/*.b_list{
+	border: 1px solid red;
+	padding: 2px 5px;
+}*/
+.tradingButton a.button{
+	padding: 6px 0;
+}
+
+/*省钱排行*/
+.save .col {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.save .s_mylist .col:nth-child(2),.save .s_mylist .col:nth-child(4) {
+  height: 60px;
+  margin-top: 10px;
+}
+.save .s_mylist h4 {
+    font-size: 13px;
+}
+.save .s_mylist p {
+    font-size: 13px;
+}
+.save .s_mylist span {
+    font-size: 12px;
+}
+.save .top_3 .second>i.secondImg {
+    width: 75px;
+    height: 75px;
+    margin-top: 25px;
+}
+.save .top_3 .first>i.firstImg {
+    width: 95px;
+    height: 95px;
+    margin-top: 5px;
+}
+.save .top_3 .third>i.thirdImg {
+    width: 70px;
+    height: 70px;
+    margin-top: 30px;
+}
+.save .top_3 .rank {
+    font-size: 14px;
+}
+.save .top_3 .mobile {
+    font-size: 14px;
+}
+.save .top_3 .name {
+    margin-top: 5px;
+    font-size: 13px;
+}
+.save .top_3 .maxP {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.save .s_list {
+    max-height:46.5px;
+}
+.save .s_list .text {
+    line-height: 32px;
+}
+.save .s_list .text1 {
+    font-size: 16px;
+}
+.save .s_list .text2 {
+    font-size: 14px;
+}
+.save .s_list .text3 {
+    font-size: 13px;
+}
+.save .s_list .text4 {
+    font-size: 17px;
+
+}
+/*搜索*/
+.search .s_hot p {
+    font-size: 12px;
+}
+.search .s_hot .s_hotlist a {
+    font-size: 12px;
+}
+.search .s_hot .s_old .item {
+    font-size: 14px;
+}
+.searchHistory {
+    zoom: 0.56;
+}
+.search .list-find > .item > .row > .col-66 h2.chinese-name {
+    font-size: 15px;
+}
+.search .list-find > .item > .row > .col-66 .description {
+    font-size: 13px;
+}
+.search .list-find .bottom {
+    font-size: 13px !important;
+}
+.search .list-find > .item > .row > .col-66 p.fontsizeMans {
+    font-size: 14px;
+}
+.item-input-inset .item-input-wrapper input {
+    line-height: 20px;
+    height: 27px;
+}
+/*.search .list-find > .item > .row > .col-66>s.pushpin{
+	    right: 5px;
+    	top: 5px;
+}*/
+/*我的账单*/
+  .mybill .m_list .tradeNo {
+    background: #ff9c01;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  .mybill .m_list .merchant .m_name {
+    font-size: 16px;
+    padding-right: 120px;
+  }
+  .mybill .m_list .merchant .m_time {
+    font-size: 13px;
+    margin-left: 50px;
+  }
+  .mybill .tradeList .header {
+    font-size: 14px;
+  }
+  .mybill .tradeList .h_left {
+    font-size: 15px;
+  }
+  .mybill .tradeList .h_small {
+    font-size: 14px;
+  }
+  .mybill .tradeList .h_right {
+    font-size: 15px;
+  }
+}

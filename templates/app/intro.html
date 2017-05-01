@@ -1,0 +1,12 @@
+<ion-view>
+    <ion-content scroll="false">
+        <ion-slide-box detect-gestures gesture-type="swipeleft" show-pager="false"
+                       on-slide-changed="slideHasChanged($index)" class="intro">
+            <ion-slide>
+                <div class="full-image" ng-click="startApp()">
+                    <img ng-src="img/intro/intro.jpg" class="fullscreen-image">
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,91 @@
+.polo-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
+.polo-wrapper s{
+	display: block;
+	position: absolute;
+}
+.polo-wrapper s.polo_up{
+	width: 55px;
+	height: 50px;
+	top: 7%;
+	left: 24%;
+	background: url(../img/up.png) 0 0 no-repeat;
+	background-size: cover;
+	opacity:0.4;
+}
+.polo-wrapper s.polo_down{
+	width: 37px;
+	height: 29px;
+	right: 27%;
+	bottom: 11%;
+	background: url(../img/down.png) 0 0 no-repeat;
+	background-size: cover;
+	opacity:0.4;
+}
+.polo_border{
+	border: 1px solid #ffc501;
+	border-radius: 50%;
+	width: 205px;
+	height: 205px ;
+	margin: 25px auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.polo {
+  /*margin: 10px auto;*/
+	margin: 1px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+ /* background-color: #fff;*/
+  overflow: hidden;
+}
+.polo-point {
+	display: block;
+  position:absolute;
+   top: 30%;
+  left: 38%;
+  /*right: 40%;*/
+  vertical-align: middle;
+  font-size: 52px;
+  color: #f54918;
+  z-index: 10;
+  /*pointer-events: none;*/
+}
+.polo-point:after{
+  content: "分";
+  font-size: 38px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+.polo-text {
+  font-size: 16px;
+  position: absolute;
+  color: #474f59;
+  /*bottom: 20%;*/
+  left: 0;
+  right: 0px;
+  text-align: center;
+  pointer-events: none;
+}
+.polo-text >div{
+	font-size: 52px;
+	 color: #f54918;
+	 margin-top: -175px;
+	 margin-left: 16px;
+}
+.polo-text >div:after{
+  content: "分";
+  font-size: 38px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+
+

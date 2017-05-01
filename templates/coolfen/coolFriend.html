@@ -1,0 +1,40 @@
+<ion-view view-title="酷友会">
+  <ion-nav-bar class="bar-coolfen">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="left">
+      <a class="button button-icon button-clear ion-ios-arrow-back" ng-click="goHome();"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="coolfriend">
+    <div id="bg">
+      <img ng-src="img/coolfen/WuhanMap.png" class="full-image"/>
+    </div>
+
+    <div class="bg2">
+      <img ng-src="img/coolfen/MerchantCircle.png" class="full-image"/>
+    </div>
+
+    <div class="myCanvas">
+      <canvas id="myCanvas" width="480px" height="300px"></canvas>
+    </div>
+
+
+    <div>
+      <ul class="list">
+        <a class="item animated-item" ng-repeat="item in items">
+          <div style="font-size: 14px; margin-top: 5px;color: #666">
+            酷友{{item.MobilePhoneNum.slice(0,3)}}xxxx{{item.MobilePhoneNum.slice(7, 11)}}正在使用&nbsp;&nbsp;&nbsp;<span style="color: #000">{{item.PublicCardName}}卡</span>
+          </div>
+          <div style="color: #BEBEBE; font-size: 11px">此卡已被使用了{{item.PublicCardUserNum}}次</div>
+          <!--<div class="full-image text-right seeLabel">去看看-->
+            <!--<i class="ion-ios-arrow-right"></i>-->
+          <!--</div>-->
+        </a>
+      </ul>
+    </div>
+
+  </ion-content>
+</ion-view>

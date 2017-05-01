@@ -1,0 +1,24 @@
+<div class="list list-find list-inset" >
+  <!--<div class="item" ng-repeat="card in pagination.items" ng-click="addUserCard(card)">-->
+  <div class="item" ng-repeat="card in pagination.items">
+    <div class="row">
+      <div class="col col-34">
+        <img class="card-bk" ng-src="{{url+card.PImage.bg}}">
+      </div>
+      <div class="col col-66">
+      		<s class='pushpin-{{card.isAdded}}' ng-click="addUserCard(card)"><!--图钉--></s>
+        <script>
+
+        </script>
+          <h2 class="chinese-name">{{card.PName.CN}}</h2>
+          <p class="description">{{card.Description}}</p>
+        	<div class="bottom">
+          	<p class="pull-left distance"><i class="icon ion-ios-location-outline point"></i> {{card.distance}}km </p>
+          	<p class="pull-right fontsizeMans"> 使用次数 {{card.Mans}}</p>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="height: 0px;background: transparent"></div>
+<ion-infinite-scroll ng-if="pagination.canLoaded" on-infinite="loadMore()" distance="2%"></ion-infinite-scroll>

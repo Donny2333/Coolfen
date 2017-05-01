@@ -1,0 +1,54 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-light">
+    <div class="buttons">
+      <button class="button button-clear icon-left ion-ios-arrow-left" ng-click="closeLogin()"></button>
+    </div>
+    <h1 class="title">登录</h1>
+  </ion-header-bar>
+  <ion-content scroll="false" class="login" padding="false">
+    <form class="list" name="loginForm" novalidate>
+      <div class="list">
+        <label class="item item-input item-borderless" style="border-top: 0.5px solid #ccc;">
+          <!--<input type="tel" ui-br-phone-number name="mobile" maxlength="11" placeholder="请输您的手机号"
+                 ng-disabled="info.telNumberDisabled"
+                 ng-model="info.mobilePhone" required="required"
+                 ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/"
+                 autofocus="autofocus">-->
+          <input type="tel" ui-br-phone-number name="mobile" maxlength="11" placeholder=" 请输您的手机号"
+                 ng-disabled="info.telNumberDisabled"
+                 ng-model="info.mobilePhone" required="required"
+                 ng-pattern="/^1[0-9]{10}$/"
+                 style="line-height: 20px;" autofocus="autofocus">
+        </label>
+        <!--<i class="icon loginClear" ng-click="loginClear()" ng-if="info.mobilePhone.length != 0">x</i>-->
+        <i class="tel_x" ng-click="loginClear()" ng-if="info.mobilePhone.length != 0"><!--清理手机账户--></i>
+        <button class="button button-small button-clear getAuthBtn" ng-disabled="loginForm.mobile.$invalid || info.disabled"
+                ng-click="getAuthCode()">
+          <span><!--小竖线--></span>{{info.text}}
+        </button>
+
+        <div class="loginLine"><!--分割线--></div>
+
+        <label class="item item-input item-borderless input_sryzm">
+          <input type="tel" ng-model="info.authCode"
+                 placeholder=" 请输入验证码" ng-required="true" style="line-height: 20px;">
+        </label>
+      </div>
+
+      <!--<div class="alert-message" style="display: none">
+        <small ng-if="loginForm.authCode.$error.required">验证码不能为空</small>
+      </div>-->
+
+      <div class="item item-input-inset item-borderless" style="background: transparent">
+        <button class="button button-block login-button"ng-disabled="!loginForm.$valid" ng-click="onLogin()">
+          登录
+        </button>
+      </div>
+
+    </form>
+    <div id="contract" style="color: #999;font-size: 12px;margin-top: -10px;">
+      用户登录默认同意<a href="#" style="text-decoration: none;color: #999" ng-click="openContract()">《酷分服务协议》</a>
+    </div>
+  </ion-content>
+
+</ion-modal-view>

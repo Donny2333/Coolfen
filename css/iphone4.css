@@ -1,0 +1,59 @@
+@media (max-width:320px) and (max-height:480px){
+	/*侧边栏*/
+  .c_menu .m_info img {
+    margin-top: 25px;
+  }
+  .c_menu .m_info div.please{
+    margin-top: 10px;
+  }
+  .c_menu .c_list .item {
+    line-height:35px;
+  }
+  .c_menu .c_list ion-item s{
+    margin-right: 45px;
+  }
+  /*个人资料*/
+ .person .toparea-container {
+    height: 152px;
+}
+.person .toparea-container .profile-image {
+    margin: 15px auto 0 auto;
+}
+   .person .item .input-label {
+  padding: 5px 20px 5px 35px;
+}
+	.person .button-bar,.person .list img {
+    top: 45px;
+}
+/*最新入驻*/
+   .hotspot .item_desc .title{
+   	padding-top: 15px;
+   }
+.hotspot ul.information {
+        margin-top: 5px;
+}
+.hotspot .item_desc .scroll-view .scroll {
+    height: 170px;
+}
+/*水球*/
+.polo_border {
+    width:153px;
+    height: 153px;
+    margin: 5px auto;
+}
+.polo-text >div {
+    font-size: 38px;
+    margin-top: -75px;
+}
+.polo-text >div:after {
+    font-size: 30px;
+}
+.home .ad {
+    margin: 2px auto;
+}
+.home .discount h2 {
+    margin-top: -5px;
+}
+
+}
+

@@ -1,0 +1,133 @@
+<ion-view view-title="我的账单" cache-view="false">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-buttons side="left">
+      <a class="button go_home" ng-click="goHome()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+    <div class="bar bar-subheader billStatus" ng-if="bills.data.length > 0 || bt==true">
+      <button class="button button-clear" style="width: 49%;font-size: 14px !important;" ng-class="{'does': active,'undo':!active}"
+              ng-click="does()" ng-disabled="disabled">
+        已完成
+      </button>
+      <div class="apartLine"></div>
+      <button class="button button-clear " style="width: 49%;font-size: 14px !important;" ng-class="{'does':!active,'undo':active}"
+              ng-click="undo()" ng-disabled="disabled">
+        已撤销
+      </button>
+    </div>
+    <!--<ion-content  class="mybill has-subheader" has-bouncing="true" delegate-handle="mainScroll" ng-if="bills.data.length > 0">-->
+
+      <ion-content  class="mybill" has-bouncing="true" delegate-handle="mainScroll"
+                    ng-class="{'Mhas-header':(bt==true || bills.data.length>0),'Mno-header':!(bt==true || bills.data.length>0)}">
+
+
+      <ion-refresher pulling-text="获取最新个人账单..." on-refresh="doRefresh()"></ion-refresher>
+
+      <div class="m_list" ng-repeat="bill in bills.data">
+        <div class="list-inset" ng-class="{gray_img:bill.Status == -1}">
+          <div class="tradeNo">订单编号: <span>{{bill.TransactionNum}}</span></div>
+          <div class="item item-text-wrap tradeDetail" style="padding: 0 10px 0 10px;">
+            <div class="row merchant">
+              <div class="col col-50 m_name" style="color: #333">
+                {{bill.MerchantName}}<span class="xin" ng-if="bill.IsfirstOnlinePay">新</span>
+              </div>
+              <div class="col col-67 m_time col-offset-10" style="color: #666">{{bill.CreatedTime | date:'yyyy-MM-dd HH:mm'}}</div>
+              <div class="Half left"></div>
+              <div class="Half line"></div>
+              <div class="Half right"></div>
+            </div>
+            <div class="tradeList">
+              <!--积分卡-->
+              <div class="row rowJf" ng-if="!bill.IsPrepaidMerchant">
+                <div class="col header" style="color: #666">实际支付:</div>
+                <div class="col h_left">{{bill.ActualConsumptionMoney| currency:'¥ '}}</div>
+                <div class="col h_small" style="color: #999">消费总额:</div>
+                <div class="col h_right">{{bill.ConsumptionMoney | currency:'¥ '}}</div>
+              </div>
+              <div class="row rowJf" ng-if="!bill.IsPrepaidMerchant">
+                <div class="col header" style="color: #666">获得积分:</div>
+                <div class="col h_left">{{bill.GetPoint}}</div>
+                <div class="col h_small" style="color: #999">积分抵现:</div>
+                <div class="col h_right">{{bill.UsePoint}}</div>
+              </div>
+              <div class="row rowJf" ng-if="!bill.IsPrepaidMerchant">
+                <div class="col header" style="color: #666">积分余额:</div>
+                <div class="col h_left">{{bill.Points}}</div>
+                <div class="col h_small"></div>
+                <div class="col h_right"></div>
+              </div>
+              <!--储值卡-->
+              <div class="row  rowJf" ng-if="bill.IsPrepaidMerchant">
+                <div class="col header" style="color:#666;">消费金额</div>
+                <div class="col">{{bill.ConsumptionMoney | number:2}}</div>
+                <div class="col header">储值扣除</div>
+                <div class="col">{{bill.UsePoint}}</div>
+              </div>
+              <div class="row  rowJf" ng-if="bill.IsPrepaidMerchant">
+                <div class="col header">实付金额</div>
+                <div class="col">{{bill.ActualConsumptionMoney| number:2}}</div>
+                <div class="col header">成功充值</div>
+                <div class="col">{{bill.GetPoint}}</div>
+              </div>
+              <div class="row  rowJf" ng-if="bill.IsPrepaidMerchant">
+                <div class="col header">储值余额</div>
+                <div class="col">{{bill.Points}}</div>
+                <div class="col"></div>
+                <div class="col"></div>
+              </div>
+            </div>
+            <div style="position: absolute; right: 0; bottom: -5px">
+              <img src="img/my/cash.png" ng-class="{gray_img:bill.Status == -1}" width="40" height="40"/>
+            </div>
+            <div ng-if="bill.PayMode == '微信'" style="position: absolute; right: 0; bottom: -5px">
+              <img src="img/my/wechat.png" ng-class="{gray_img:bill.Status == -1}"
+                   width="40" height="40"/>
+            </div>
+            <div ng-if="bill.PayMode == '支付宝'" style="position: absolute; right: 0; bottom: -5px">
+              <img src="img/my/alipay.png" ng-class="{gray_img:bill.Status == -1}"
+                   width="40" height="40"/>
+            </div>
+            <div ng-if="bill.PayMode == '储值卡' || bill.PayMode == '商家储值卡'"
+                 style="position: absolute; right: 0; bottom: -5px">
+              <img src="img/my/valueCard.png" ng-class="{gray_img:bill.Status == -1}"
+                   width="40" height="40"/>
+            </div>
+            <div ng-if="bill.PayMode == '哆啦宝'" style="position: absolute; right: 0; bottom: -5px">
+              <img src="img/my/sweep.png" ng-class="{gray_img:bill.Status == -1}"
+                   width="40" height="40"/>
+            </div>
+            <div ng-if="bill.Status == -1" style="position: absolute; top:45px;left:38%; z-index: -10">
+              <img src="img/my/bill-cx.gif" style="width:130px;height: 112px;"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ion-infinite-scroll class="has-tabs" ng-if="!query.noMoreItemsAvailable" on-infinite="loadMore()"
+                           distance="1%">
+      </ion-infinite-scroll>
+
+
+        <div  align="center" ng-if="bills.data.length == 0 && cx==true" >
+          <img src="img/message/noMessage.png" style="text-align:center; width: 80px;margin-top: 100px;"/>
+          <p class="NoMessage_text">无撤销记录</p>
+        </div>
+
+        <div class="NoZd" align="center" ng-if="bills.data.length == 0 && query.searching == false && cx == false">
+          <img src="img/message/noMessage.png" style="text-align:center; width: 80px;margin-top: 100px;"/>
+          <p class="NoMessage_text">无账单记录</p>
+        </div>
+
+    </ion-content>
+
+    <!--<div  align="center" ng-if="bills.data.length == 0 && cx==true" style="margin-top: 40px">-->
+      <!--<img src="img/message/noMessage.png" style="text-align:center; width: 80px;margin-top: 100px;"/>-->
+      <!--<p class="NoMessage_text">无撤销记录</p>-->
+    <!--</div>-->
+
+    <!--<div class="NoZd" align="center" ng-if="bills.data.length == 0 && query.searching == false && cx == false">-->
+      <!--<img src="img/message/noMessage.png" style="text-align:center; width: 80px;margin-top: 100px;"/>-->
+      <!--<p class="NoMessage_text">无账单记录</p>-->
+    </div>
+</ion-view>

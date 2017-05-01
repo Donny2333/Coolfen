@@ -1,0 +1,93 @@
+<ion-view>
+  <ion-nav-title>
+    <a class="serchbutn" href="#" ng-click="search()">
+      <div class="serchbutn_style">
+        <i class="searchImg"><!--search.img--></i>
+        <span>搜索全部卡片</span>
+      </div>
+    </a>
+  </ion-nav-title>
+  <ion-content has-bouncing="false" class="home" scroll="false">
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+      </div>
+      <!-- 如果需要滚动条 -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <ion-scroll has-bouncing="true" ng-style="{height:'{{info.addCardPageHeigh}}'+'px'}" delegate-handle="homeScroll">
+      <div ng-show="!info.showAddCardPage">
+        <ion-item class="item-borderless">
+          <div class="discount">
+            <h2 id="ShortDescription">{{vm.ShortDescription}}</h2>
+          </div>
+          <div class="ad">
+            <img src="img/sound.png" width="12" height="12"/>
+            <span>点击水球，吸其它卡的积分</span>
+          </div>
+          <!-- polo module -->
+          <polo point="vm.CurrentPoints"></polo>
+          <div class="cardCtrl">
+            <!--<button class="button button-small coolfen btn get" ng-click="get()" ng-disabled="disabled">吸分</button>-->
+            <a class="pay" ng-click="onPay()"><i class="GoPay"><!--go--></i><span>去买单</span></a>
+          </div>
+        </ion-item>
+        <div class="item item-borderless" style="min-height:80px;"></div>
+      </div>
+      <div class="addCardPage" ng-if="info.showAddCardPage" ng-include="'templates/home/addCard.html'"
+           ng-controller="addCardCtrl"></div>
+    </ion-scroll>
+  </ion-content>
+</ion-view>
+<!-- 按钮收藏组件 -->
+<favorite-box ng-if="!info.showAddCardPage"></favorite-box>
+<!-- 交易记录 -->
+<script id='trading.html' type="text/ng-template">
+  <ion-modal-view class="trade mymodal">
+    <div class="bar bar-header">
+      <s class="title">交易记录</s>
+    </div>
+    <div class="bar bar-subheader" style="padding: 0;border: 0;background:none">
+      <div class="row tr_title">
+        <div class="col col-33 text-nowrap text-center">交易日期</div>
+        <div class="col text-nowrap text-center">实际支付</div>
+        <div class="col text-nowrap text-center">消费积分</div>
+        <div class="col text-nowrap text-center">获得积分</div>
+      </div>
+    </div>
+    <ion-content class="has-subheader">
+      <div class="row b_list" ng-repeat="bill in vm.bills" ng-if="vm.bills.length>0 ">
+        <div class="col col-33 text-nowrap text-center b_date">{{bill.Created | tradeDate}}</div>
+        <div class="col text-nowrap text-center b_cosume">{{bill.ConsumptionMoney | number:2}}</div>
+        <div class="col text-nowrap text-center b_use">{{bill.UsePoint | number:0}}</div>
+        <div class="col text-nowrap text-center b_get">{{bill.GetPoint | number:0}}</div>
+      </div>
+    </ion-content>
+    <div class="act_bottom tradingButton">
+      <a class="button button-light  btn_a" style="color: #ff3824;width: 50%;float: left;font-size: 14px"
+         ng-click="deleteCard()">删除此卡</a>
+      <a class="button button-light  btn_a " style="color: #333; width: 50%;border-left: 0;font-size: 14px"
+         ng-click="closeModal()">取消</a>
+    </div>
+  </ion-modal-view>
+</script>
+<!-- 活动 -->
+<script id='activity.html' type="text/ng-template">
+  <ion-modal-view class="mymodal activityDetail">
+    <ion-content has-bouncing="false">
+      <div class="act_content">
+        <h2>我爱鱼头</h2>
+        <ul class="act_content_text">
+          <li><span>1.</span>活动时间：2015年01月01日～12月31日</li>
+          <li><span>2.</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Ad adipisci at atque corporis
+            delectus earum eos eum facilis fuga
+          </li>
+          <li><span>3.</span>本活动只适用于网上预定，非网上预定方式不可享受此活动。</li>
+        </ul>
+      </div>
+    </ion-content>
+    <a class="button button-light button-block act_bottom" style="color: #333;margin-bottom: 0" ng-click="closeModal()">取消</a>
+  </ion-modal-view>
+</script>
+
+

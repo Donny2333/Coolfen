@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="CoolfenMobileApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="lib/Swiper/dist/css/swiper.min.css" rel="stylesheet">
+  <link href="css/addCard.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+  <link href="lib/angular-bootstrap-datetimepicker/css/datetimepicker.min.css" rel="stylesheet">
+  <link href="lib/ionic-toast/src/style.css" rel="stylesheet">
+  <link href="css/favoriteBox.css" rel="stylesheet">
+  <link href="css/polo.css" rel="stylesheet">
+
+  <link href="css/iphone6P.css" rel="stylesheet">
+  <link href="css/iphone5.css" rel="stylesheet">
+  <link href="css/iphone4.css" rel="stylesheet">
+  <link href="css/nexus.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+  <script src="lib/rotate/jquery-2.1.4.min.js"></script>
+  <script src="lib/rotate/jquery.animateNumber.min.js"></script>
+  <script src="lib/rotate/circle-progress.js"></script>
+  <script src="lib/lodash/lodash.min.js"></script>
+  <script src="lib/angular-bootstrap-datetimepicker/js/moment-with-locales.min.js"></script>
+  <!-- Baidu Map js -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=eAWBcNqFVYzBmqCC8WZ5aCrU&v=1.0"></script>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- other plugins -->
+  <script src="lib/ngstorage/ngStorage.js"></script>
+  <script src="lib/angular-cache/dist/angular-cache.min.js"></script>
+  <script src="lib/Swiper/dist/js/swiper.min.js"></script>
+  <script src="lib/angular-ios9-uiwebview.patch.js"></script>
+  <script src="lib/angular-bootstrap-datetimepicker/js/datetimepicker.min.js"></script>
+  <script src="lib/ionic-toast/src/ionic-toast.js"></script>
+  <script src="lib/signalr/jquery.signalR.js"></script>
+  <script src="lib/angular-signalr-hub/signalr-hub.js"></script>
+  <script src="lib/angular-count-to/build/angular-count-to.min.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/convertor.js"></script>
+  <script src="js/config/router.js"></script>
+  <script src="js/controller/AppCtrl.js"></script>
+  <script src="js/controller/homeCtrl.js"></script>
+  <script src="js/controller/addCardCtrl.js"></script>
+  <script src="js/controller/searchCtrl.js"></script>
+  <script src="js/controller/cardPayCtrl.js"></script>
+  <script src="js/controller/cardPositionCtrl.js"></script>
+  <script src="js/controller/aboutCtrl.js"></script>
+  <script src="js/controller/coolFriendCtrl.js"></script>
+  <script src="js/controller/saveMoneyCtrl.js"></script>
+  <script src="js/controller/activityCtrl.js"></script>
+  <script src="js/controller/billCtrl.js"></script>
+  <script src="js/controller/userCtrl.js"></script>
+  <script src="js/controller/hotspotCtrl.js"></script>
+  <script src="js/controller/messageListCtrl.js"></script>
+  <script src="js/controller/messageDetailCtrl.js"></script>
+  <script src="js/controller/introCtrl.js"></script>
+  <script src="js/controller/guideCtrl.js"></script>
+  <script src="js/controller/settingCtrl.js"></script>
+  <script src="js/controller/feedBackCtrl.js"></script>
+
+  <script src="js/service/auth.js"></script>
+  <script src="js/service/geolocation.js"></script>
+  <script src="js/service/toast.js"></script>
+  <script src="js/service/card.js"></script>
+  <script src="js/service/merchant.js"></script>
+  <script src="js/service/bill.js"></script>
+  <script src="js/service/user.js"></script>
+  <script src="js/service/message.js"></script>
+  <script src="js/service/coolfenCache.js"></script>
+  <script src="js/service/device.js"></script>
+  <script src="js/service/share.js"></script>
+  <script src="js/service/modalService.js"></script>
+  <script src="js/directive/CoolfenInput.js"></script>
+  <script src="js/directive/FavoriteBox.js"></script>
+  <script src="js/directive/polo.js"></script>
+  <script src="js/value/string.js"></script>
+</head>
+
+<body>
+<ion-nav-view></ion-nav-view>
+<!--<div ng-controller="guideCtrl">-->
+  <!--<img class="guide" ng-style="{'z-index':'{{10000-$index}}'}" ng-repeat="item in guide" width="100%" height="100%" ng-src="img/intro/{{item[0].img}}" ng-if="!item.readable" ng-click="readGuide('{{$index}}')">-->
+<!--</div>-->
+
+<div ng-controller="guideCtrl">
+  <img class="guide" ng-style="{'z-index':'{{10000-$index}}'}" ng-repeat="item in guide" width="100%" height="100%" ng-src="img/intro/guide0.png" ng-if="!item.readable" ng-click="readGuide('{{$index}}')">
+</div>
+</body>
+
+</html>

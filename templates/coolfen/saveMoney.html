@@ -1,0 +1,91 @@
+<ion-view view-title="省钱排行" cache-view="false">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="left">
+      <a class="button go_home" ng-click="goHome();"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="save" has-bouncing="false" scroll="flase">
+    <div class="row text-center s_mylist" ng-if="loggedIn">
+      <div class="col col-32">
+        <h4 class="center myRank" style="margin: 5px 0">#{{myRank}}</h4>
+        <p style="height: 10px"></p>
+        <span>我的排行</span>
+      </div>
+      <div class="col col-1"></div>
+      <div class="col col-32">
+        <h4><i class="icon ion-ios-location-outline"></i>&nbsp;{{myMaxMerchantName}}</h4>
+
+        <p>[已兑{{myMaxSumPoint}}分]</p>
+        <span> 哪里最省</span>
+      </div>
+      <div class="col col-1"></div>
+      <div class="col col-32">
+        <h4 class="center mySumPoint" style="margin: 5px 0">{{mySumPoint | number:2}}</h4>
+
+        <p style="height: 10px"></p>
+        <span>兑分总额</span>
+      </div>
+    </div>
+    <div class="row text-center top_3">
+      <div class="col col-33 second">
+        <!--<img src="img/my/second.png" width="85" height="85">-->
+        <i class="secondImg"><!--img--></i>
+        <p class="rank">#2</p>
+        
+        <span class="mobile">{{secondItem.MobilePhone}}</span>
+
+        <p class="name"><i class="icon ion-ios-location-outline"></i> {{secondItem.MaxMerchantName}}</p>
+
+        <p class="maxP">[已兑{{secondItem.MaxSumPoint}}分]</p>
+
+        <p class="sumP">{{secondItem.SumPoint}}</p>
+      </div>
+      <div class="col col-33 first">
+        <!--<img src="img/my/first.png" width="100" height="100">-->
+				<i class="firstImg"><!--img--></i>
+        <p class="rank">#1</p>
+
+        <span class="mobile">{{firstItem.MobilePhone}}</span>
+
+        <p class="name"><i class="icon ion-ios-location-outline"></i> {{firstItem.MaxMerchantName}}</p>
+
+        <p class="maxP">[已兑{{firstItem.MaxSumPoint}}分]</p>
+
+        <p class="sumP">{{firstItem.SumPoint}}</p>
+      </div>
+      <div class="col col-33 third">
+        <!--<img src="img/my/third.png" width="75" height="75">-->
+				<i class="thirdImg"><!--img--></i>
+        <p class="rank">#3</p>
+
+        <span class="mobile">{{thirdItem.MobilePhone}}</span>
+
+        <p class="name"><i class="icon ion-ios-location-outline"></i> {{thirdItem.MaxMerchantName}}</p>
+
+        <p class="maxP">[已兑{{thirdItem.MaxSumPoint}}分]</p>
+
+        <p class="sumP">{{thirdItem.SumPoint}}</p>
+      </div>
+    </div>
+    <div class="row s_list" ng-repeat="item in items | limitTo:7"
+         ng-class="{'fourth':$index == 0,'fifth': $index == 1,'sixth':$index == 2,'seventh': $index == 3,'eighth':$index == 4,'ninth': $index == 5,'tenth':$index == 6}">
+      <div class="col col-20 text-center">
+        <span class="text text1">#{{item.ranking}}</span>
+      </div>
+      <div class="col">
+        <span class="text text2">{{item.MobilePhone}}</span>
+      </div>
+      <div class="col">
+        <span class="text text3"><i class="icon ion-ios-location-outline"></i>&nbsp;&nbsp;{{item.MaxMerchantName}}<span>[已兑{{item.MaxSumPoint}}分]</span></span>
+      </div>
+      <div class="col col-15">
+        <span class="text text4">{{item.SumPoint | number:0}}</span>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

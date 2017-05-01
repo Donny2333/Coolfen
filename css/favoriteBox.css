@@ -1,0 +1,286 @@
+.favorite-switch {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: 45px;
+  width: 45px;
+  border-radius:50% ;
+ 	box-shadow:1px 1px 5px #999;
+}
+
+.favorite-item {
+  position: fixed;
+  height: 45px;
+  width: 45px;
+  bottom: 10px;
+  border-radius: 50%;
+ display: none;
+ box-shadow:1px 1px 5px #999;
+}
+
+.store {
+  z-index: 17;
+  background: url('../img/home/store.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.trading-record {
+  z-index: 16;
+  right: 10px;
+  background: url('../img/home/tradingRecord.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.trading-record-in {
+  -webkit-animation: trading-record-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: trading-record-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+.trading-record-out {
+  -webkit-animation: trading-record-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: trading-record-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@-webkit-keyframes trading-record-in-keyframes {
+  from {
+    /*bottom: 22px;*/
+    right: 10px;
+  }
+  to {
+    /*bottom: 82px;*/
+   	right: 82px;
+  }
+}
+
+@keyframes trading-record-in-keyframes {
+  from {
+    /*bottom: 22px;*/
+    right: 10px;
+  }
+  to {
+    /*bottom: 82px;*/
+    right: 82px;
+  }
+}
+
+@-webkit-keyframes trading-record-out-keyframes {
+  from {
+    /*bottom: 82px;*/
+    right: 82px;
+  }
+  to {
+    /*bottom: 22px;*/
+   right: 10px;
+  }
+}
+
+@keyframes trading-record-out-keyframes {
+  from {
+    /*bottom: 82px;*/
+    right: 82px;
+  }
+  to {
+    /*bottom: 22px;*/
+   	right: 10px;
+  }
+}
+
+.activity {
+  z-index: 15;
+  right: 10px;
+  background: url('../img/home/activity.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.activity-in {
+  -webkit-animation: activity-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s forwards;
+  animation: activity-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s forwards;
+}
+
+.activity-out {
+  -webkit-animation: activity-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: activity-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@-webkit-keyframes activity-in-keyframes {
+  from {
+    /*bottom: 22px;*/
+   right:10px;
+  }
+  to {
+    /*bottom: 82px;*/
+   right: 82px;
+  }
+}
+
+@keyframes activity-in-keyframes {
+  from {
+    /*bottom: 22px;*/
+   right:10px;
+  }
+  to {
+    /*bottom: 82px;*/
+   right:82px;
+  }
+}
+
+@-webkit-keyframes activity-out-keyframes {
+  from {
+    /*bottom: 82px;*/
+    right:82px;
+  }
+  to {
+    /*bottom: 22px;*/
+   right:10px;
+  }
+}
+
+@keyframes activity-out-keyframes {
+  from {
+    /*bottom: 82px;*/
+   right:82px;
+  }
+  to {
+    /*bottom: 22px;*/
+   right:10px;
+  }
+}
+
+.phone {
+  z-index: 14;
+   right: 10px;
+  background: url('../img/home/phone.png');
+  background-size: cover;
+}
+
+.phone-in {
+  -webkit-animation: phone-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s forwards;
+  animation: phone-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s forwards;
+}
+
+.phone-out {
+  -webkit-animation: phone-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: phone-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@-webkit-keyframes phone-in-keyframes {
+  from {
+    /*bottom: 82px;*/
+   right:82px;
+  }
+  to {
+    /*bottom: 142px;*/
+    right:155px;
+  }
+}
+
+@keyframes phone-in-keyframes {
+  from {
+    /*bottom: 82px;*/
+   right:82px;
+  }
+  to {
+    /*bottom: 142px;*/
+   right:155px;
+  }
+}
+
+@-webkit-keyframes phone-out-keyframes {
+  from {
+    /*bottom: 82px;*/
+    right:82px;
+  }
+  to {
+    /*bottom: 22px;*/
+    right:10px;
+  }
+}
+
+@keyframes phone-out-keyframes {
+  from {
+    /*bottom: 142px;*/
+    right:155px;
+  }
+  to {
+    /*bottom: 22px;*/
+    right:10px;
+  }
+}
+
+.location {
+  z-index: 13;
+  right: 10px;
+  background: url('../img/home/location.png');
+ background-size: cover;
+}
+
+.location-in {
+  -webkit-animation: location-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.6s forwards;
+  animation: location-in-keyframes 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.6s forwards;
+}
+
+.location-out {
+  -webkit-animation: location-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: location-out-keyframes 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@-webkit-keyframes location-in-keyframes {
+  from {
+    /*bottom: 142px;*/
+   right:155px;
+  }
+  to {
+    /*bottom: 202px;*/
+    right:230px;
+  }
+}
+
+@keyframes location-in-keyframes {
+  from {
+    /*bottom: 142px;*/
+   right:155px;
+  }
+  to {
+    /*bottom: 202px;*/
+   right:230px;
+  }
+}
+
+@-webkit-keyframes location-out-keyframes {
+  from {
+    /*bottom: 202px;*/
+    right:230px;
+  }
+  to {
+    /*bottom: 22px;*/
+    right:10px;
+  }
+}
+
+@keyframes location-out-keyframes {
+  from {
+    /*bottom: 202px;*/
+   right:230px;
+  }
+  to {
+    /*bottom: 22px;*/
+    right:10px;
+  }
+}
+
+
+
+.f_yy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+}
+

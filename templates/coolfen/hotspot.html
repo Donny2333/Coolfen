@@ -1,0 +1,55 @@
+<ion-view view-title="最新入驻">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-buttons side="left">
+      <a class="button go_home" ng-click="goHome()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="hotspot" scroll="false"  delegate-handle="mainScroll">
+    <div class="coolfen-card">
+      <ion-slide-box auto-play="true" does-continue="true" slide-interval="5000000" active-slide="index" show-pager="true"
+                     on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="item in items" class="c_slide" style="border:0;margin-bottom: 0;">
+          <div class="item item-body item-borderless item_img">
+            <div class="coolfen-image">
+              <img class="full-image" ng-src="{{url+item.PublicCardBgImage}}">
+            </div>
+          </div>
+          <div class="item item-body item-borderless item_desc">
+            <ion-scroll direction="y" >
+              <!--onload="setHeight()"-->
+              <!--<script language="JavaScript" type="text/javascript">
+                var height_screen=screen.height;
+                var width_screen=screen.width;
+                document.getElementsByClassName("scroll").style.height=height_screen-120-width_screen*0.55+"px";
+              </script>-->
+              <div class="title" style="text-align: center;">
+                <span class="trangle tr_left"></span><span class="t_name" ng-bind="item.PublicCardName"></span><span class="trangle tr_right"></span>
+              </div>
+              <p class="con hotspot_P " ng-bind-html="item.CardActivityRules"></p>
+              <!--<ul class="information">
+              	<li ng-repeat="li in information"><i class="sanjiao_right"></i>{{li}}</li>
+              </ul>-->
+            </ion-scroll>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+
+  </ion-content>
+  <div class="bar bar-footer" style="padding: 0">
+    <div class="dot">
+      <ul>
+        <li class="sel"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="padding-horizontal btn-bottom">
+      <button class="button button-full d_addCard" ng-click="addCard()">添加卡</button>
+    </div>
+  </div>
+</ion-view>
+

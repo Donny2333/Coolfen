@@ -1,0 +1,274 @@
+/* css for ion-content */
+.scroll {
+  /*background-color: #EAEAEA !important;*/
+  background-color: transparent !important;
+}
+
+/* css for WheelCards component */
+.wheelCards {
+  width: 100%;
+  height: 160px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.wheelCardName {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+  font-size: 13px
+}
+
+.wheelCards .wheelCard img {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+  .wheelCards .wheelCard {
+    margin: 0;
+    display: block;
+    position: absolute;
+    height: 65%;
+    top: 20px;
+    left: 50%;
+    width: 50%;
+    margin-left: -25%;
+    transition: all 0.2s ease-out;
+  }
+
+  .wheelCards .wheelCard:nth-of-type(1) {
+    transform: rotateY(90deg) translateZ(-250px);
+    opacity: 0;
+  }
+
+  .wheelCards .wheelCard:nth-of-type(2) {
+    transform: rotateY(45deg) translateZ(-250px);
+    opacity: 0.8;
+  }
+
+  .wheelCards .wheelCard:nth-of-type(3) {
+    transform: rotateY(0deg) translateZ(0px) scale(1.2);
+    opacity: 1;
+  }
+
+  .wheelCards .wheelCard:nth-of-type(4) {
+    transform: rotateY(-45deg) translateZ(-250px);
+    opacity: 0.8;
+  }
+
+  .wheelCards .wheelCard:nth-of-type(5) {
+    transform: rotateY(-90deg) translateZ(-250px);
+    opacity: 0;
+  }
+
+  .wheelCards .wheelCard:nth-of-type(6) {
+    display: none;
+  }
+
+
+
+/* add card page 最强推荐*/
+.addCardPage {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  margin-top: 15px;
+}
+.pushpin-false{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: -2px;
+	top: -7px;
+	background-image: url('../img/pin.png');
+	background-size: cover;
+}
+.pushpin-true{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: -2px;
+  top: -7px;
+  background-image: url('../img/pin_pressed.png');
+  background-size: cover;
+}
+.pushpin.activated{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: -2px;
+  top: -7px;
+	background-image: url('../img/pin_pressed.png');
+	background-size: cover;
+}
+
+.addCardPage.ng-enter, .addCardPage.ng-leave {
+  transition: all ease-out 0.5s;
+}
+
+.addCardPage.ng-enter,
+.addCardPage.ng-leave.ng-leave-active {
+  opacity: 0;
+  transform: translateY(600px);
+}
+
+.addCardPage.ng-leave,
+.addCardPage.ng-enter.ng-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* public card style */
+.home .list-find {
+  background: transparent;
+  margin: 8px auto;
+  width: 92%;
+}
+
+.home .list-find .card-bk {
+  display: block;
+  border-radius: 2px;
+  width: 132px;
+  height: 80px;
+  margin: auto 0;
+}
+
+.home .list-find > .item {
+  margin-bottom: 15px;
+  height: 102px;
+  background: #fffdf5 !important;
+  border-radius: 0px;
+  border: none;
+
+}
+
+
+.home .list-find > .item > .row {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.home .list-find > .item > .row a {
+  text-decoration: none;
+}
+
+.home .list-find > .item > .row > .col-34 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+ }
+
+.home .list-find > .item > .row > .col-66 {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+ 	width: 55%;
+}
+
+.home .list-find > .item > .row > .col-66 p {
+  -webkit-font-smoothing: antialiased;
+}
+
+.home .list-find > .item > .row > .col-66 .button {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  min-width: 34px;
+  min-height: 34px;
+  font-size: 18px !important;
+  line-height: 32px;
+}
+
+.home .list-find > .item > .row > .col-66 h2.chinese-name{
+  color: #333;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.home .list-find > .item > .row > .col-66 p.description {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.home .list-find > .item > .row > .col-66 p.distance i {
+	margin-right: 3px;
+  font-size: 13px !important;
+}
+.home .list-find > .item > .row > .col-66 p.distance{
+  font-size: 11px;
+  color: #f54918;
+}
+
+.home .point {
+  color: #f54918;
+}
+
+.home .favorite {
+  color: #FE9900;
+}
+
+.home .list-find .bottom {
+  position: absolute;
+  left: 5px;
+  bottom: -18px;
+  width: 95%;
+}
+.home .list-find .bottom .fontsizeMans{
+	font-size: 12px;
+	width: 48%;
+	overflow: hidden;
+	text-align: left;
+}
+
+.home .pull-right {
+  float: right !important;
+  color: #f54918;
+}
+.home .pull-left {
+  float: left !important;
+}
+
+
+.showQueryResult {
+  position: fixed;
+  /*top: 44px;*/
+  left: 15px;
+  right: 15px;
+  /*pointer-events: auto;*/
+  z-index: 10000;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 245px;
+  /*width: inherit;*/
+}
+
+.showQueryResult .item {
+  max-height: 50px;
+  width: inherit;
+}
+
+.highlighted {
+  color: #999;
+  display: inline-block !important;
+  margin-right: 0 !important;
+}
+
+.showQueryResult .item {
+  max-height: 50px;
+}

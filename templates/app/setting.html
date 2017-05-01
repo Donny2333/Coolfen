@@ -1,0 +1,44 @@
+<ion-view view-title="设置">
+  <ion-nav-bar  style="border-bottom: 0.5px solid #b2b2b2;">
+    <ion-nav-buttons side="left">
+      <a class="button go_home" ng-click="goHome()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="setting" scroll="false">
+    <ul class="item">
+      <li>
+        <a class="item item-borderless item-icon-left item-icon-right" ui-sref="app.feedBack" style=" padding-bottom: 13px;">
+          <s class="seting_feedback"><!--img--></s>
+          <span>意见反馈</span>
+          <i class="icon ion-ios-arrow-forward"></i>
+        </a>
+        <div class="c_line"></div>
+      </li>
+      
+      <li>
+        <a class="item item-borderless item-icon-left item-icon-right" ui-sref="app.about" style="padding-bottom: 13px; margin-top: -1px;">
+          <s class="seting_about"><!--img--></s>
+          <span>关于酷分</span>
+          <span class="version">v {{version}}</span>
+          <i class="icon ion-ios-arrow-forward"></i>
+        </a>
+        <div class="c_line"></div>
+      </li>
+      
+      <li>
+        <a class="item item-borderless item-icon-left item-icon-right" ng-click="showShare()">
+          <s class="seting_share"><!--img--></s>
+          <span> 分享酷分</span>
+          <i class="icon ion-ios-arrow-forward"></i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="padding-horizontal" ng-if="loggedIn">
+      <button class="button button-full"  ng-click="userLogout()">
+        退出登录
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

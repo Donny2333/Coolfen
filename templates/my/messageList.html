@@ -1,0 +1,55 @@
+<ion-view view-title="消息提醒">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-buttons side="left">
+      <!--<a class="button button-icon button-clear ion-ios-arrow-left" ng-click="goHome()"></a>-->
+      <a class="button go_home" ng-click="goBack()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content class="m_detail">
+    <ion-list>
+      <ion-item class="item item-avatar m_detailList" href="#" ng-repeat="message in messageList" ng-click="click($index)">
+        <img alt="全部" ng-if="message.Category == '全部'" src="img/message/coolfen.png">
+        <img alt="美食" ng-if="message.Category == '美食'" src="img/message/food.png">
+        <img alt="酒店" ng-if="message.Category == '酒店'" src="img/message/hotel.png">
+        <img alt="生活" ng-if="message.Category == '生活'" src="img/message/life.png">
+        <img alt="娱乐" ng-if="message.Category == '娱乐'" src="img/message/entertainment.png">
+
+        <div class="MessageContent">
+          <p class="M_name">{{message.from.merchantChineseName}}</p>
+          <span class="M_day item-note">{{message.updateTime | fromNow}}</span>
+            <p class="textContent">
+              {{message.latestMessageContent}}
+            </p>
+
+        </div>
+
+        <!--<h2 class="M_name">{{message.from.merchantChineseName}}</h2>-->
+        <!--<span class="M_day item-note">{{message.updateTime | fromNow}}</span>-->
+
+        <span class="badge badge-assertive" style="width: 18px;"
+                  ng-if="message.notReadMessageNumber>=1&&message.notReadMessageNumber.toString().length == 1">
+              {{message.notReadMessageNumber}}
+        </span>
+        <span class="badge badge-assertive" style="width: 24px"
+                  ng-if="message.notReadMessageNumber>=1&&message.notReadMessageNumber.toString().length == 2">
+              {{message.notReadMessageNumber}}
+        </span>
+            <span class="badge badge-assertive" style="width: 30px"
+                  ng-if="message.notReadMessageNumber>=1&&message.notReadMessageNumber.toString().length >= 3">
+              99+
+        </span>
+
+        <!--<div class="MtextContent">-->
+          <!--<p class="textContent">-->
+            <!--{{message.latestMessageContent}}-->
+          <!--</p>-->
+       <!--</div>-->
+        <ion-option-button class="button-assertive shanchu" ng-click="deleteMessage($index)">删除</ion-option-button>
+      </ion-item>
+    </ion-list>
+    <div align="center" ng-if="messageList.length == 0 && query.searching == false">
+      <img src="img/message/noMessage.png" style="text-align:center; width: 80px; height: 108px; margin-top: 100px;"/>
+      <div class="noMessage">无消息提醒</div>
+    </div>
+  </ion-content>
+</ion-view>

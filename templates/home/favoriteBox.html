@@ -1,0 +1,10 @@
+<div>
+  <div id='store' class='favorite-switch store' ng-click='clickFavorite()'></div>
+  <div id='tradingRecord' class='favorite-item trading-record' ng-click="clickTradingRecord()"></div>
+  <!--<div id='activity' class='favorite-item activity' ng-click="clickActivity()"></div>-->
+  <a ng-href="tel:{{vm.currentUserCard.PublicCardOutputSimplify.RetailerAddressList[0].Telephone}}" id='phone'
+     class='favorite-item phone'></a>
+
+  <div id='location' class='favorite-item location' ng-click="clickLocation(vm.currentUserCard.PublicCardOutputSimplify.RetailerAddressList[0])"></div>
+  <!--<div id="yy"></div>-->
+</div>

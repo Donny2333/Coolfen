@@ -1,0 +1,60 @@
+<ion-view view-title="个人资料">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon button-clear ion-ios-arrow-left" ng-click="goHome()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content class="person" has-bouncing="false" delegate-handle="usersScroll">
+    <div class="toparea-container">
+      <div class="text-center">
+        <div class="profile-image" style="position: relative;border-radius: 50%">
+          <img ng-cache id="myImage" ng-if="imageURI" ng-src="{{imgSrc}}" width="95" height="95" ng-click="show()" style="border-radius: 50%;border:2px solid #eeefe4;">
+          <img ng-cache ng-if="!imageURI" ng-src="img/my/avatar.png" width="95" height="95" ng-click="show()" style="border: 2px solid #eeefe4; border-radius: 50%;">
+          <img class="sex" width="20" height="20" ng-src='{{sexSrc}}'>
+        </div>
+        <div class="label-group">
+          <span class="mobile-number">{{member.BalancePoints}}&nbsp;&nbsp;积分</span>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="button-bar">
+        <a class="button-item1" ng-class="{'button-item' : isActive('item1')}" ng-click="setActive('item1')">男</a>
+        <a class="button-item2" ng-class="{'button-item' : isActive('item2')}" ng-click="setActive('item2')">女</a>
+    </div>
+      <label class="item item-input item-stacked-label" style="border-top:0;" >
+        <span class="input-label p_title">昵称:</span>
+        <input class="input-label p_value" type="text" ng-model="member.Username" ng-blur="blur()" placeholder="请输入您的昵称"/>
+      </label>
+      <div class="line"></div>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label p_title">生日:</span>
+        <input class="input-label p_value" type="text" ng-model="member.Birthday" readonly ng-click="onSelectDate()" style="background: #fff"
+               />
+        <img src="img/my/date.png" width="21" height="20">
+      </label>
+      <div class="line"></div>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label p_title">手机号:</span>
+        <input class="input-label p_value" type="text" ng-model="member.phone" readonly style="background: #fff"/>
+    </label>
+      <div class="line"></div>
+    </div>
+    <!--<div class="padding-horizontal">-->
+      <!--<button class="button button-full button-coolfen" style="font-size: 16px;" ng-click="userLogout()">-->
+        <!--退出登录-->
+      <!--</button>-->
+    <!--</div>-->
+    <!--<div style="height: 50px;"></div>-->
+  </ion-content>
+</ion-view>
+<script id="tpls/common/datePicker.html" type="text/ng-template">
+  <ion-modal-view class="dtPicker">
+    <ion-content scroll="false">
+      <div class="dtPicker-box" ng-click="closeDateModal()">
+        <datetimepicker data-ng-model="dtPicker.date" data-on-set-time="onDateSet(newDate, oldDate)"
+                        data-datetimepicker-config="dtPicker.dateConfig"></datetimepicker>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

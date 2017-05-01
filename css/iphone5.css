@@ -1,0 +1,260 @@
+/*iphone5*/
+@media screen and (max-width: 320px){
+	/*侧边栏*/
+  .c_menu .m_info img {
+    margin-top: 25px;
+  }
+  /*个人资料*/
+   .person .item .input-label {
+  padding: 10px 20px 10px 35px;
+}
+	.person .button-bar,.person .list img {
+    top: 55px;
+}
+/*最新入驻*/
+.hotspot ul.information {
+    margin-top: 30px;
+}
+.hotspot .item_desc .scroll-view .scroll {
+    height: 270px;
+}
+/*home页*/
+.bar .title a.serchbutn>div.serchbutn_style{
+	width: 55%;
+}
+.home .cardCtrl .pay {
+    margin-top: 10px;
+}
+.home .discount h2{
+	margin-top: 0;
+}
+.home .ad {
+    margin: 10px auto;
+}
+/*卡片尺寸*/
+.swiper-slide{
+  width: 40%;
+  height: 80px;
+}
+/*水球样式*/
+.polo_border {
+    width:183px;
+    height: 183px;
+    margin: 20px auto;
+}
+.polo-text >div {
+    font-size: 42px;
+    color: #f54918;
+    margin-top: -90px;
+}
+.polo-text >div:after {
+    font-size: 32px;
+}
+ .polo-point {
+    top: 66px;
+    font-size: 38px;
+  }
+  .polo-point:after {
+    font-size: 32px;
+  }
+  .polo-text {
+    bottom: 35px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .polo-wrapper s.polo_up{
+	top: 5%;
+}
+.polo-wrapper s.polo_down{
+	bottom: 9%;
+}
+  /*最强推荐-*/
+.home .list-find > .item > .row > .col-66 {
+ 	width: 47%;
+}
+.home .list-find > .item > .row > .col-66 h2.chinese-name {
+	width: 70%;
+}
+.home .list-find > .item > .row > .col-66 p.description{
+	width: 75%;
+}
+.home .list-find .bottom .fontsizeMans{
+	width: 50%;
+}
+.pushpin {
+    right: 0px;
+    top: -4px;
+}
+/*关于酷分*/
+/*.about div.coolfenAbout01{
+height:310px;
+}*/
+/*.about div.coolfenAbout02{
+	height:336px;
+}*/
+/*.about div.coolfenAbout03{
+	height:244px;
+}*/
+/*.about div.coolfenAbout04{
+	height:112px;
+}*/
+/*.about div.coolfenAbout04 ul li a{
+	margin-top: 30%;
+}*/
+/*.about div.coolfenAbout04 ul li a.officialAccount.activated{
+	margin-left: 52%;
+}*/
+/*.about div.coolfenAbout04 ul li a.sinaWebo{
+	margin-left: 40%;
+}*/
+/*.about div.coolfenAbout04 ul li a.sinaWebo.activated{
+	margin-left: 38%;
+}*/
+/*.about div.coolfenAbout04 ul li a.webSite{
+	margin-left: 25%;
+}*/
+/*.about div.coolfenAbout04 ul li a.webSite.activated{
+	margin-left: 20%;
+}*/
+/*搜索*/
+.search .s_hot .s_hotlist a {
+    width: 30.5%;
+}
+.search .list-find > .item > .row > .col-66 p.description {
+    margin-top: 3px;
+}
+.search .list-find .bottom {
+    bottom: 6px;
+}
+/*我的账单*/
+  .mybill .m_list .merchant .m_time {
+    margin-left: 15px;
+  }
+  .mybill .row{
+  	width: 105%;
+  }
+  .row {
+    width: 100%;
+  }
+  .col {
+    padding: 2px;
+  }
+  /*隐藏菜单*/
+.favorite-switch {
+  height: 40px;
+  width: 40px;
+  bottom: 10px;
+}
+.favorite-item {
+  height: 40px;
+  width: 40px;
+  bottom: 10px;
+}
+@-webkit-keyframes trading-record-in-keyframes {
+  from {
+    right: 10px;
+  }
+  to {
+   	right: 78px;
+  }
+}
+
+@keyframes trading-record-in-keyframes {
+  from {
+    right: 10px;
+  }
+  to {
+    right: 78px;
+  }
+}
+
+@-webkit-keyframes trading-record-out-keyframes {
+  from {
+    right: 78px;
+  }
+  to {
+   	right: 10px;
+  }
+}
+
+@keyframes trading-record-out-keyframes {
+  from {
+    right: 78px;
+  }
+  to {
+   	right: 10px;
+  }
+}
+@-webkit-keyframes phone-in-keyframes {
+  from {
+   right:78px;
+  }
+  to {
+    right:145px;
+  }
+}
+
+@keyframes phone-in-keyframes {
+  from {
+   right:78px;
+  }
+  to {
+   right:145px;
+  }
+}
+
+@-webkit-keyframes phone-out-keyframes {
+  from {
+    right:78px;
+  }
+  to {
+    right:10px;
+  }
+}
+
+@keyframes phone-out-keyframes {
+  from {
+    right:145px;
+  }
+  to {
+    right:10px;
+  }
+}
+
+@-webkit-keyframes location-in-keyframes {
+  from {
+   right:145px;
+  }
+  to {
+    right:210px;
+  }
+}
+
+@keyframes location-in-keyframes {
+  from {
+   right:145px;
+  }
+  to {
+   right:210px;
+  }
+}
+
+@-webkit-keyframes location-out-keyframes {
+  from {
+    right:145px;
+  }
+  to {
+    right:10px;
+  }
+}
+
+@keyframes location-out-keyframes {
+  from {
+   right:210px;
+  }
+  to {
+    right:10px;
+  }
+}
+
+}

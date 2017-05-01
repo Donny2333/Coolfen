@@ -1,0 +1,44 @@
+<ion-view view-title="{{messageBox.from.merchantChineseName}}">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-buttons side="left">
+      <a class="button go_home" ng-click="goBack()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <style>
+    .black {
+      color: black;
+    }
+  </style>
+
+  <ion-content class="messageDetail" has-bouncing="false">
+    <div class="merchantImg">
+      <img alt="全部" ng-if="messageBox.Category == '全部'" src="img/message/coolfen02.png">
+      <img alt="娱乐" ng-if="messageBox.Category == '娱乐'" src="img/message/store01.png">
+      <img alt="美食" ng-if="messageBox.Category == '美食'" src="img/message/store02.png">
+      <img alt="酒店" ng-if="messageBox.Category == '酒店'" src="img/message/store03.png">
+      <img alt="生活" ng-if="messageBox.Category == '生活'" src="img/message/store04.png">
+    </div>
+    <span class="dianjiamessage">店家消息</span>
+    <div class="line" ng-style="{bottom:'{{scrollHeight}}'+'px'}"></div>
+    <div class="l_all">
+      <div class="msgList" ng-repeat="message in messageBox.messageDetail">
+        <div class="m_icon">
+          <img src="img/message/redDot.png" alt="Arry老师" width="10" height="10" ng-if="!message.readOver"/>
+          <img src="img/message/grayDot.png" alt="Arry老师" width="10" height="10" ng-if="message.readOver"/>
+        </div>
+        <div class="sj">
+          <img src="img/message/unreadBack.png" width="6" height="19" ng-if="!message.readOver">
+          <img src="img/message/readBack.png" width="6" height="19" ng-if="message.readOver">
+        </div>
+        <div class="mes" ng-class="{'unread': !message.readOver, 'readOver': message.readOver}">
+          {{message.content}}
+          <p class="mesTime">
+            <i class="MTime"><!----></i>
+            <span>{{message.sendTime | fromNow}}</span>
+          </p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content drag-content="false">
+    <!--<div class="yy"></div>-->
+    <ion-nav-bar class="bar-coolfen">
+      <ion-nav-buttons side="left">
+        <button class="button button-icon" menu-toggle="left">
+          <img src="img/menu.png" class="home_user"/>
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear" ng-click="checkMessage()">
+          <div ng-if="newMessage" class="newMessageBadge"></div>
+          <img src="img/news.png" class="home_message"/>
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" class="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" style="background: url('img/my/sidebarBack.png'); background-size: cover;">
+    <ion-content class="c_menu" scroll="true">
+      <div class="m_info" ng-if="!loggedIn" ng-click="login()">
+      	<img src="img/my/logout.png" width="95" height="95" style="border: 2px solid #eeefe4; border-radius: 50%;">
+        <div class="please">请登录</div>
+      </div>
+      <div class="m_info" ui-sref="app.user" menu-close ng-if="loggedIn">
+        <img ng-if="imageURI" ng-src="{{imgSrc}}" width="95" height="95">
+        <img ng-if="!imageURI" ng-src="img/my/avatar.png" width="95" height="95" style="border: 2px solid #eeefe4; border-radius: 50%;">
+        <img ng-src="{{sexSrc}}" width="20" height="20" class="m_sex">
+        <p>{{member.Username}}</p>
+        <span>积分余额<span class="yue">{{member.BalancePoints | number:0}}</span></span>
+      </div>
+      <ion-list class="c_list">
+        <!--<ion-item class="item-icon-left item-borderless" href="javascript:void(0);" ng-click="checkMyBill()"
+                  menu-close>-->
+        <ion-item class="item-icon-left item-borderless" href="javascript:void(0);" ng-click="checkMyBill()"
+                  menu-close>
+          <!--<img src="img/my/check.png" width="16" height="18" class="c_img_1"/>-->
+          <s class="my_check"><!--img--></s>
+          <span>我的账单</span>
+        </ion-item>
+        <div class="c_line"><!--分割线--></div>
+        <ion-item class="item-icon-left item-borderless" ui-sref="app.hotspot" ui-sref-active="active" menu-close>
+          <!--<img src="img/my/new.png" width="21" height="16" class="c_img_2"/>-->
+          <s class="my_new"><!--img--></s>
+          <span>最新入驻</span>
+        </ion-item>
+        <div class="c_line"><!--分割线--></div>
+        <ion-item class="item-icon-left item-borderless" ui-sref="app.saveMoney" menu-close>
+          <!--<img src="img/my/rank.png" width="23" height="20" class="c_img_3"/>-->
+          <s class="my_rank"><!--img--></s>
+          <span>省钱排行</span>
+        </ion-item>
+        <div class="c_line"><!--分割线--></div>
+        <ion-item class="item-icon-left item-borderless" ui-sref="app.setting" menu-close>
+          <!--<img src="img/my/setting.png" width="18" height="18" class="c_img_4"/>-->
+          <s class="my_setting"><!--img--></s>
+          <span>设置</span>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

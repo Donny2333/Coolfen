@@ -1,0 +1,64 @@
+<ion-view view-title="">
+  <ion-nav-bar class="bar-light searchTitle">
+    <ion-nav-buttons side="left">
+      <div class="item-input-inset showQuery">
+        <label class="item-input-wrapper">
+          <!--<i class="iconfont">&#xe617;</i>-->         
+         	<i class="searchMagnifying"><!--img--></i>
+          <input type="search" ng-style="{'width': searchW+'px'}" ng-click="openQueryResult()"
+                 ng-blur="closeQueryResult()"
+                 ng-model="vm.queryString" placeholder="请输入商户名" ng-focus="search()">
+        </label>
+        <!--<i class="icon ion-android-close placeholder-icon icon-my-clear" ng-click="onClear()" ng-if="!closeShow"></i>-->
+        <i class="tel_x" ng-click="onClear()" ng-if="!closeShow"><!--清理手机账户--></i>
+        <button class="button button-clear abolish" ng-click="myGoBack()">取消
+        </button>
+      </div>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  
+  <ion-content has-bouncing="false" class="search" delegate-handle="mainScroll">
+    <div ng-include="'templates/home/addCard.html'" style="background: #fff;height: 0" ng-if="resultShow && vm.queryString"></div>
+    <div class="s_hot" ng-if="searchShow">
+      <p>热门搜索</p>
+
+      <div class="list list-inset s_hotlist">
+        <a ng-repeat="hot in hotSearch" ng-click="selectSuggestItem1(hot)">{{hot}}</a>
+      </div>
+      <p ng-if="arr.length > 0" style="color: #999">搜索历史</p>
+      
+      <div class="list list-inset s_old" ng-if="arr.length > 0">
+      	<a class="item item-icon-left item-icon-right" href="#" ng-repeat="x in arr" ng-click="selectSuggestItem(x)">
+		          <!--<i class="icon ion-ios-clock-outline"></i>-->
+		          <i class="searchHistory"><!--img--></i>
+		          <span>{{x.name}}</span>
+		          <i class="icon ion-ios-arrow-forward"></i>
+        </a>
+             
+        <a class="item" href="#" style="color: #999;text-align: center" ng-click="clearHistory()">
+          清空历史记录
+        </a>
+      </div>
+    </div>
+
+    <div align="center" ng-if="vm.rs">
+      <h4 style="font:18px '黑体';background: #efeff4">抱歉，没有搜索到相关卡片</h4>
+    </div>
+  </ion-content>
+
+  <ul class="showQueryResult list" ng-if="vm.showQueryResult" ng-style="{'top': showQueryH+'px'}">
+    <li class="item resultList" ng-click="onQuery(vm.queryString)">
+      <span class="resultName">{{vm.queryString}}</span>
+      <span style="float: right; color: #666; margin-right: 15px;">{{length}}个结果</span>
+    </li>
+    
+    <li class="item resultList" ng-click="selectSuggestItem(result)" ng-repeat="result in vm.results">
+      <span class="resultName" ng-bind-html="result.name | highlight:vm.queryString">
+      </span><span style="float: right; color: #666; margin-right: 15px;">{{result.distance}}km</span>
+    </li>
+  </ul>
+
+  <div class="myBackdrop backdrop"></div>
+
+</ion-view>
+

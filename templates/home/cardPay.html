@@ -1,0 +1,229 @@
+<ion-view view-title="{{vm.title}}">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon button-clear ion-ios-arrow-left" ng-click="goHome()"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="pay-bk pay-content" has-bouncing="false">
+    <div class="item item-divider"></div>
+    <div class="list" style="margin-bottom: 0">
+      <div class="payline" style="top:0"></div>
+      <label class="item item-input">
+        <span class="input-label" ng-if="!card.PublicCardOutputSimplify.IsPrepaidCard">消费总额</span>
+        	<consumption-Money-Input placeholder="询问服务员以后输入" info="vm" max="vm.max" card="vm.userCard"
+                                 btn-Disabled="vm.disabled"
+                                 style=" text-align:right;color: #ff3b30;margin-right:10px;font-size: 14px;"></consumption-Money-Input>
+        	<span class="item-note unit" style="color: #666;">元</span>
+      </label>
+
+      <div class="paymid"></div>
+      <label class="item item-input">
+        <span class="input-label" ng-if="!card.PublicCardOutputSimplify.IsPrepaidCard">不参与积分抵现</span>
+        <exclusive-Money-Input placeholder="询问服务员以后输入" info="vm" max="vm.max" card="vm.userCard"
+                                 btn-Disabled="vm.disabled"
+                                 style=" text-align:right;color: #ff3b30;margin-right:10px;font-size: 14px;"></exclusive-Money-Input>
+        <span class="item-note unit" style="color: #666;padding-right: 0px;">元</span>
+      </label>
+
+      <div class="paymid"></div>
+      <label class="item item-input">
+        <span class="input-label" ng-if="!card.PublicCardOutputSimplify.IsPrepaidCard">积分抵现</span>
+        <span class="input-label" ng-if="card.PublicCardOutputSimplify.IsPrepaidCard">储值扣除</span>
+        <!--<input type="number" ng-model="vm.UsePoint" class="price" ng-change="onCheck()">-->
+        <point-Input info="vm" max="vm.max" card="vm.userCard" btn-Disabled="vm.disabled" error="error"
+                     style=" text-align:right;color: #ff3b30;margin-right: 10px; margin-top: -3px;"></point-Input>
+        <span class="item-note unit" ng-if="!card.PublicCardOutputSimplify.IsPrepaidCard"
+              style="color: #666; padding-right: 0px;font-size: 13px">分</span>
+        <span class="item-note" ng-if="card.PublicCardOutputSimplify.IsPrepaidCard"
+              style="color: #666; padding-right: 24px;font-size: 13px">元</span>
+      </label>
+
+      <div class="paymid"></div>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          商家名称
+        </div>
+        <select ng-model="vm.merchant" ng-options="merchant.name for merchant in vm.merchants" style="font-size: 14px">
+        </select>
+      </label>
+
+      <div class="payline"></div>
+    </div>
+    <div class="item item-divider"></div>
+    <div class="list" ng-if="!vm.isPrepaidCardMerchant">
+      <div class="payline" style="top: 0"></div>
+      <div class="item item-borderless" style="padding:8px 0 8px 15px; color: #333;font-size: 13px">
+        实际支付
+        <span class="item-note">{{vm.ActualConsumptionMoney | currency:'¥'}}</span>
+      </div>
+      <div class="item item-borderless" style="padding:0 0 8px 15px; color: #333;font-size: 13px">
+        可获积分
+        <span class="item-note">{{vm.GetPoint | number:0}}</span>
+      </div>
+      <div class="item item-borderless" style="padding:0 0 8px 15px; color: #333;font-size: 13px">
+        积分余额
+        <span class="item-note">{{vm.BalancePoint | number:2}}</span>
+      </div>
+      <div class="payline"></div>
+      <!--vm.ActualConsumptionMoney == 0-->
+      <div class="item item-divider" ng-if="me.loggedIn && vm.ActualConsumptionMoney!= 0" style="font-size: 12px">
+        支付方式
+        <!--<button ng-click="open()">test</button>-->
+
+      </div>
+      <div class="payline"></div>
+      <div class="item item-avatar item-icon-right" ng-click="vm.isAlipay = true"
+           ng-if="me.loggedIn && vm.ActualConsumptionMoney!= 0">
+        <img src="img/pay/alipay.png">
+
+        <h2>支付宝支付</h2>
+
+        <p>推荐有支付宝账号的用户使用</p>
+        <i class="icon"
+           ng-class="{'ion-ios-checkmark': vm.isAlipay, 'coolfen': vm.isAlipay, 'ion-ios-checkmark-outline': !vm.isAlipay, 'no-select':!vm.isAlipay}"></i>
+      </div>
+      <div class="paymid"></div>
+      <div class="item item-avatar item-icon-right" ng-click="vm.isAlipay = false"
+           ng-if="me.loggedIn && vm.ActualConsumptionMoney!= 0">
+        <img src="img/pay/wechat.png">
+
+        <h2>微信支付</h2>
+
+        <p>推荐安装微信5.0及以上版本的使用</p>
+        <i class="icon"
+           ng-class="{'ion-ios-checkmark': !vm.isAlipay, 'coolfen': !vm.isAlipay, 'ion-ios-checkmark-outline': vm.isAlipay, 'no-select':vm.isAlipay}"></i>
+      </div>
+      <div class="payline"></div>
+    </div>
+    <div class="list" ng-if="vm.isPrepaidCardMerchant">
+      <div class="item">
+        <h2>储值余额{{vm.BalancePoint | number:2}}</h2>
+      </div>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          商家名称
+        </div>
+        <select ng-model="vm.merchant" ng-options="merchant.name for merchant in vm.merchants">
+        </select>
+      </label>
+    </div>
+
+
+    <div class="padding-horizontal btn-bottom" ng-if="vm.isPrepaidCardMerchant">
+      <button class="button button-full btn-pay" ng-click="onPay()"
+              ng-disabled="vm.disabled || vm.ActualConsumptionMoney > 0">
+        确认支付
+      </button>
+    </div>
+  </ion-content>
+
+
+  <div class="padding-horizontal btn-bottom" ng-if="!vm.isPrepaidCardMerchant">
+    <button class="button button-full btn-pay" ng-click="onPay()" ng-disabled="vm.disabled">
+      确认支付 {{vm.ActualConsumptionMoney | currency : "¥"}}
+    </button>
+  </div>
+</ion-view>
+
+
+
+<script id="Pass.html" type="text/ng-template">
+  <ion-modal-view class="pay_result mymodal">
+    <div class="bar bar-header bar-light">
+      <a class="button button-icon button-clear ion-ios-arrow-left" ng-click="closeModal()"></a>
+
+      <h1 class="title">买单详情</h1>
+    </div>
+    <ion-content class="has-header" has-bouncing="false">
+      <div class="list" style="margin:10px 0 0 0">
+        <a class="item item-borderless item-icon-left" style="background: transparent;font-size: 15px">
+          <i class="icon ion-ios-checkmark" style="color: #50cd2e;"></i>
+          支付完成
+        </a>
+      </div>
+      <div class="list" ng-if="!vm.isPrepaidCardMerchant">
+        <div class="payline" style="top: 0"></div>
+        <div class="item item-borderless">
+          <h2 style="float: left;font-size: 14px">{{transaction.MerchantName}}</h2>
+          <span class="item-note" style="float: right;color: #666;font-size: 12px">消费总额：&nbsp;{{transaction.ConsumptionMoney | currency: '¥'}}</span>
+        </div>
+        <div class="paymid"></div>
+        <div class="payInfo">
+          <div class="item item-borderless" style="padding:12px 0 8px 15px;">
+            实际支付:
+            <span class="item-note">{{transaction.ActualConsumptionMoney | currency:"¥"}}</span>
+          </div>
+          <div class="item item-borderless" style="padding:0 0 8px 15px;">
+            获得积分:
+            <span class="item-note">{{transaction.GetPoint | number:0}}</span>
+          </div>
+          <div class="item item-borderless" style="padding:0 0 8px 15px;">
+            积分余额:
+            <span class="item-note">{{transaction.BalancePoint | number:2}}</span>
+          </div>
+        </div>
+        <div class="paymid"></div>
+        <div class="tradeResult">
+          <div class="item item-borderless" style="padding:10px 5px 2px 15px;">
+            订单编号:
+            <span class="item-note">{{transaction.TransactionNumber}}</span>
+          </div>
+          <div class="item item-borderless" style="padding:0 0 2px 15px;">
+            消费时间:
+            <span class="item-note">{{transaction.Created | date:'yyyy-MM-dd HH:mm:ss':'UTC'}}</span>
+          </div>
+          <div class="item item-borderless" style="padding:0 0 10px 15px;">
+            手机号码:
+            <span class="item-note">{{transaction.MobilePhoneNumber}}</span>
+          </div>
+          <div class="payline"></div>
+        </div>
+      </div>
+      <ion-list ng-controller="addCardCtrl" class="near">
+        <ion-item class="item-borderless" style="font-size: 12px;background: #efeff4">
+          附近还有
+        </ion-item>
+        <ion-item class="item-borderless">
+          <div class="row">
+            <div class="col col-38 nearList"
+                 ng-repeat="card in pagination.items | limitTo:2 " ng-click="addNearCard(card)">
+              <img ng-src="{{url+card.PImage.bg}}" width="100%" height="100">
+
+              <p style="padding-left: 10px;color: #333;text-align: left;font-size: 10px">{{card.PName.CN}}</p>
+              <span style="float: left;padding-left: 10px;font-size: 9px">
+                <i class="icon ion-ios-location-outline"></i> {{card.distance}}km
+              </span>
+              <span style="float: right;padding-right: 5px;text-align: left;font-size: 9px">使用次数&nbsp;{{card.Mans}}</span>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<script id="payFail.html" type="text/ng-template">
+  <ion-modal-view class="pay_fail mymodal">
+    <div class="bar bar-header bar-light">
+      <a class="button button-icon button-clear ion-ios-arrow-left" ng-click="closeModal()"></a>
+
+      <h1 class="title">买单详情</h1>
+    </div>
+    <ion-content class="has-header" has-bouncing="false">
+      <div class="list" style="margin:10px 0 0 10px">
+        <a class="item item-borderless item-icon-left" style="background: transparent;font-size: 15px">
+          <i class="icon ion-ios-close" style="color: #f76260;"></i>
+          支付失败
+        </a>
+      </div>
+      <div class="fail_img">
+        <img src="img/pay/sad.png" width="200" height="200"/>
+      </div>
+      <div class="fail_reason">
+        <p>{{payError}}</p>
+        <button class="button button-assertive" ng-click="closeModal()">重新支付</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
